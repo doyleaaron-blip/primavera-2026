@@ -1,8 +1,16 @@
+const DB_BUCKET = 'RBhPLuiX9Qn2uTiJDw4TyL';
+
 // State
 let mySchedule = new Set(JSON.parse(localStorage.getItem('primavera-schedule')) || []);
 let myUsername = localStorage.getItem('primavera-username') || 'Me';
 
-// Friends: array of { id, name, schedule: Set, active: boolean }
+let myUserId = localStorage.getItem('primavera-user-id');
+if (!myUserId) {
+  myUserId = Math.random().toString(36).substring(2, 11) + Math.random().toString(36).substring(2, 11);
+  localStorage.setItem('primavera-user-id', myUserId);
+}
+
+// Friends: array of { id, name, schedule: Set, active: boolean, isSynced: boolean }
 let friends = [];
 try {
   const storedFriends = JSON.parse(localStorage.getItem('primavera-friends')) || [];
@@ -10,7 +18,8 @@ try {
     id: f.id || Math.random().toString(36).substring(2, 9),
     name: f.name || 'Friend',
     schedule: new Set(f.schedule || []),
-    active: f.active !== undefined ? f.active : true
+    active: f.active !== undefined ? f.active : true,
+    isSynced: f.isSynced !== undefined ? f.isSynced : false
   }));
 } catch (e) {
   friends = [];
@@ -28,16 +37,21 @@ const toast = document.getElementById('toast');
 // Initialize
 function init() {
   updateHeaderName();
+  syncMyScheduleToCloud();
+  syncActiveFriendsFromCloud();
 
   // Check URL for shared schedule
   const urlParams = new URLSearchParams(window.location.search);
   const sharedIds = urlParams.get('shared');
   const sharedName = urlParams.get('name') || 'Friend';
+  const friendId = urlParams.get('friendId');
   
-  if (sharedIds) {
+  if (friendId) {
+    fetchFriendFromCloudAndShowDialog(friendId);
+  } else if (sharedIds) {
     const ids = sharedIds.split(',').filter(id => lineup.find(b => b.id === id));
     if (ids.length > 0) {
-      showImportDialog(ids, sharedName);
+      showImportDialog(ids, sharedName, false);
     }
   }
 
@@ -67,13 +81,35 @@ function updateHeaderName() {
   }
 }
 
-function showImportDialog(ids, defaultName) {
+function fetchFriendFromCloudAndShowDialog(friendId) {
+  fetch(`https://kvdb.io/${DB_BUCKET}/${friendId}`)
+    .then(res => {
+      if (res.ok) return res.json();
+      throw new Error(`Failed to load friend schedule: ${res.status}`);
+    })
+    .then(data => {
+      if (data && Array.isArray(data.schedule)) {
+        const ids = data.schedule.filter(id => lineup.find(b => b.id === id));
+        showImportDialog(ids, data.name || 'Friend', true, friendId);
+      } else {
+        showToast("Invalid friend schedule format.");
+        cleanupUrl();
+      }
+    })
+    .catch(err => {
+      showToast("Could not find friend's schedule in the cloud.");
+      console.error(err);
+      cleanupUrl();
+    });
+}
+
+function showImportDialog(ids, defaultName, isSynced = false, friendId = null) {
   const dialog = document.getElementById('import-dialog');
   const nameInput = document.getElementById('import-friend-name');
   const messageEl = document.getElementById('import-message');
   
   nameInput.value = defaultName;
-  messageEl.textContent = `Would you like to import this schedule of ${ids.length} sets?`;
+  messageEl.textContent = `Would you like to import this schedule of ${ids.length} sets?${isSynced ? ' (This schedule will update in real-time)' : ''}`;
   
   dialog.classList.remove('hidden');
   
@@ -89,20 +125,29 @@ function showImportDialog(ids, defaultName) {
       return;
     }
     
-    // Add to friends
-    const newFriend = {
-      id: Math.random().toString(36).substring(2, 9),
-      name: name,
-      schedule: new Set(ids),
-      active: true
-    };
-    friends.push(newFriend);
-    saveFriends();
+    // Check if friend is already added
+    const existingIdx = friends.findIndex(f => (isSynced && f.id === friendId) || (!isSynced && f.name === name));
+    if (existingIdx !== -1) {
+      friends[existingIdx].name = name;
+      friends[existingIdx].schedule = new Set(ids);
+      friends[existingIdx].isSynced = isSynced;
+      if (isSynced) friends[existingIdx].id = friendId;
+      saveFriends();
+      showToast(`Updated ${name}'s schedule!`);
+    } else {
+      const newFriend = {
+        id: isSynced ? friendId : Math.random().toString(36).substring(2, 9),
+        name: name,
+        schedule: new Set(ids),
+        active: true,
+        isSynced: isSynced
+      };
+      friends.push(newFriend);
+      saveFriends();
+      showToast(`Added ${name}'s schedule!`);
+    }
     
-    showToast(`Added ${name}'s schedule!`);
     dialog.classList.add('hidden');
-    
-    // Redirect to compare view
     cleanupUrl();
     switchView('compare');
   };
@@ -124,7 +169,8 @@ function saveFriends() {
     id: f.id,
     name: f.name,
     schedule: Array.from(f.schedule),
-    active: f.active
+    active: f.active,
+    isSynced: f.isSynced
   }));
   localStorage.setItem('primavera-friends', JSON.stringify(friendsToStore));
 }
@@ -133,7 +179,76 @@ function cleanupUrl() {
   const url = new URL(window.location);
   url.searchParams.delete('shared');
   url.searchParams.delete('name');
+  url.searchParams.delete('friendId');
   window.history.replaceState({}, document.title, url.pathname);
+}
+
+function syncMyScheduleToCloud() {
+  const payload = {
+    name: myUsername,
+    schedule: Array.from(mySchedule)
+  };
+  
+  fetch(`https://kvdb.io/${DB_BUCKET}/${myUserId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+  .then(res => {
+    if (!res.ok) {
+      if (res.status === 422) {
+        console.warn("KVdb.io bucket not verified yet. Please check your email doyle.aaron@googlemail.com to verify.");
+      } else {
+        console.error("Cloud sync failed with status:", res.status);
+      }
+    }
+  })
+  .catch(err => console.error("Cloud sync fetch failed:", err));
+}
+
+function syncActiveFriendsFromCloud() {
+  const syncedFriends = friends.filter(f => f.isSynced);
+  if (syncedFriends.length === 0) return;
+  
+  syncedFriends.forEach(friend => {
+    fetch(`https://kvdb.io/${DB_BUCKET}/${friend.id}`)
+      .then(res => {
+        if (res.ok) return res.json();
+        throw new Error(`Status ${res.status}`);
+      })
+      .then(data => {
+        if (data && Array.isArray(data.schedule)) {
+          let nameUpdated = false;
+          let scheduleUpdated = false;
+          
+          if (data.name && data.name !== friend.name) {
+            friend.name = data.name;
+            nameUpdated = true;
+          }
+          
+          const newScheduleSet = new Set(data.schedule);
+          const areSchedulesSame = (friend.schedule.size === newScheduleSet.size) &&
+            [...friend.schedule].every(id => newScheduleSet.has(id));
+            
+          if (!areSchedulesSame) {
+            friend.schedule = newScheduleSet;
+            scheduleUpdated = true;
+          }
+          
+          if (nameUpdated || scheduleUpdated) {
+            saveFriends();
+            if (currentView === 'compare') {
+              renderCompare();
+            } else if (currentView === 'schedule') {
+              renderSchedule();
+            }
+          }
+        }
+      })
+      .catch(err => console.warn(`Failed to sync friend ${friend.name}:`, err));
+  });
 }
 
 // Render Functions
@@ -307,7 +422,7 @@ function renderCompare() {
     row.innerHTML = `
       <div class="friend-info-left">
         <div class="friend-dot-indicator" style="background-color: ${friendColor}"></div>
-        <span class="friend-name">${friend.name} (${friend.schedule.size} sets)</span>
+        <span class="friend-name">${friend.name} (${friend.schedule.size} sets)${friend.isSynced ? ' 🔄' : ''}</span>
       </div>
       <div class="friend-actions">
         <label class="friend-toggle-label">
@@ -330,7 +445,7 @@ function renderCompare() {
         <input type="text" id="friend-name-input" class="glass-input" placeholder="Friend's Name">
         <button id="add-friend-btn" class="action-btn">Add Friend</button>
       </div>
-      <input type="text" id="friend-url-input" class="glass-input" placeholder="Paste Share Link or Code (e.g. thu-1,thu-15)">
+      <input type="text" id="friend-url-input" class="glass-input" placeholder="Paste Share Link or Code (e.g. friendId link or raw IDs)">
     `;
   } else {
     addForm.innerHTML = `<p style="font-size: 0.85rem; color: var(--text-secondary); text-align: center;">Maximum 4 friends added. Remove a friend to add another.</p>`;
@@ -457,6 +572,7 @@ function renderCompare() {
       localStorage.setItem('primavera-username', myUsername);
       showToast("Profile name saved!");
       updateHeaderName();
+      syncMyScheduleToCloud();
       renderCompare();
     }
   });
@@ -509,39 +625,84 @@ function renderCompare() {
         return;
       }
       
+      let parsedFriendId = null;
       let parsedIds = [];
+      let isSynced = false;
+      
       try {
-        if (inputStr.includes('shared=')) {
+        if (inputStr.includes('friendId=')) {
+          const url = new URL(inputStr);
+          parsedFriendId = url.searchParams.get('friendId');
+          isSynced = true;
+        } else if (inputStr.includes('shared=')) {
           const url = new URL(inputStr);
           const sharedParam = url.searchParams.get('shared');
           if (sharedParam) {
             parsedIds = sharedParam.split(',');
           }
+        } else if (inputStr.length > 15 && !inputStr.includes(',')) {
+          parsedFriendId = inputStr;
+          isSynced = true;
         } else {
           parsedIds = inputStr.split(',');
         }
       } catch (err) {
-        parsedIds = inputStr.split(',');
+        if (inputStr.length > 15 && !inputStr.includes(',')) {
+          parsedFriendId = inputStr;
+          isSynced = true;
+        } else {
+          parsedIds = inputStr.split(',');
+        }
       }
       
-      const validIds = parsedIds.map(id => id.trim()).filter(id => lineup.find(b => b.id === id));
-      
-      if (validIds.length === 0) {
-        showToast("No valid set IDs found in input!");
-        return;
+      if (isSynced && parsedFriendId) {
+        showToast("Fetching friend's schedule...");
+        fetch(`https://kvdb.io/${DB_BUCKET}/${parsedFriendId}`)
+          .then(res => {
+            if (res.ok) return res.json();
+            throw new Error(`Status ${res.status}`);
+          })
+          .then(data => {
+            if (data && Array.isArray(data.schedule)) {
+              const validIds = data.schedule.filter(id => lineup.find(b => b.id === id));
+              const newFriend = {
+                id: parsedFriendId,
+                name: name,
+                schedule: new Set(validIds),
+                active: true,
+                isSynced: true
+              };
+              friends.push(newFriend);
+              saveFriends();
+              showToast(`Added synced friend ${name}!`);
+              renderCompare();
+            } else {
+              showToast("Invalid friend schedule format.");
+            }
+          })
+          .catch(err => {
+            showToast("Could not find friend's schedule in the cloud.");
+            console.error(err);
+          });
+      } else {
+        const validIds = parsedIds.map(id => id.trim()).filter(id => lineup.find(b => b.id === id));
+        if (validIds.length === 0) {
+          showToast("No valid set IDs found in input!");
+          return;
+        }
+        
+        const newFriend = {
+          id: Math.random().toString(36).substring(2, 9),
+          name: name,
+          schedule: new Set(validIds),
+          active: true,
+          isSynced: false
+        };
+        friends.push(newFriend);
+        saveFriends();
+        showToast(`Added static friend ${name}!`);
+        renderCompare();
       }
-      
-      const newFriend = {
-        id: Math.random().toString(36).substring(2, 9),
-        name: name,
-        schedule: new Set(validIds),
-        active: true
-      };
-      
-      friends.push(newFriend);
-      saveFriends();
-      showToast(`Added ${name}!`);
-      renderCompare();
     });
   }
 }
@@ -579,6 +740,7 @@ function toggleBand(id) {
     mySchedule.add(id);
   }
   localStorage.setItem('primavera-schedule', JSON.stringify([...mySchedule]));
+  syncMyScheduleToCloud();
 }
 
 function handleShare() {
@@ -603,12 +765,13 @@ function handleShare() {
     }
   }
   
+  syncMyScheduleToCloud();
+  
   const baseUrl = window.location.origin + window.location.pathname;
-  const ids = Array.from(mySchedule).join(',');
-  const shareUrl = `${baseUrl}?shared=${ids}&name=${encodeURIComponent(name)}`;
+  const shareUrl = `${baseUrl}?friendId=${myUserId}`;
   
   navigator.clipboard.writeText(shareUrl).then(() => {
-    showToast("Share link copied to clipboard!");
+    showToast("Live share link copied!");
   }).catch(() => {
     prompt("Copy this link to share:", shareUrl);
   });
