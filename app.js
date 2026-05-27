@@ -429,10 +429,10 @@ async function renderForYou() {
     headerRow.style.justifyContent = 'space-between';
     headerRow.style.alignItems = 'center';
     headerRow.style.marginBottom = '1.5rem';
-    headerRow.innerHTML = \`
+    headerRow.innerHTML = `
       <h2 style="font-size: 1.3rem; color: var(--accent-secondary);">Your Recommendations</h2>
       <button id="disconnect-spotify" style="background: transparent; color: var(--text-secondary); border: none; font-size: 0.8rem; text-decoration: underline; cursor: pointer;">Disconnect</button>
-    \`;
+    `;
     mainContent.appendChild(headerRow);
     document.getElementById('disconnect-spotify').addEventListener('click', () => {
       window.localStorage.removeItem('spotify_access_token');
@@ -442,7 +442,7 @@ async function renderForYou() {
     if (directMatches.length > 0) {
       const directSec = document.createElement('div');
       directSec.className = 'day-section';
-      directSec.innerHTML = \`<h3 class="day-header" style="top:0; font-size:1rem; color: var(--success-color);">Because you listen to them</h3>\`;
+      directSec.innerHTML = `<h3 class="day-header" style="top:0; font-size:1rem; color: var(--success-color);">Because you listen to them</h3>`;
       directMatches.forEach(band => {
         const isSelected = mySchedule.has(band.id);
         const card = createBandCard(band, isSelected, () => {
@@ -457,7 +457,7 @@ async function renderForYou() {
     if (genreMatches.length > 0) {
       const genreSec = document.createElement('div');
       genreSec.className = 'day-section';
-      genreSec.innerHTML = \`<h3 class="day-header" style="top:0; font-size:1rem;">Because you like \${topGenres.slice(0,2).join(' & ')}</h3>\`;
+      genreSec.innerHTML = `<h3 class="day-header" style="top:0; font-size:1rem;">Because you like ${topGenres.slice(0,2).join(' & ')}</h3>`;
       genreMatches.slice(0, 15).forEach(band => {
         const isSelected = mySchedule.has(band.id);
         const card = createBandCard(band, isSelected, () => {
@@ -470,12 +470,12 @@ async function renderForYou() {
     }
     
     if (directMatches.length === 0 && genreMatches.length === 0) {
-      mainContent.innerHTML += \`<div class="empty-state">Couldn't find any direct matches based on your Spotify history.</div>\`;
+      mainContent.innerHTML += `<div class="empty-state">Couldn't find any direct matches based on your Spotify history.</div>`;
     }
     
   } catch(e) {
     console.error(e);
-    mainContent.innerHTML = \`<div class="empty-state">Failed to load recommendations. Please try reconnecting.</div>\`;
+    mainContent.innerHTML = `<div class="empty-state">Failed to load recommendations. Please try reconnecting.</div>`;
     window.localStorage.removeItem('spotify_access_token');
   }
 }
