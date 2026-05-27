@@ -587,9 +587,25 @@ function handleShare() {
     return;
   }
   
+  let name = myUsername;
+  if (name === 'Me') {
+    const promptedName = prompt("Enter your name so your friends know whose schedule this is:", "");
+    if (promptedName && promptedName.trim()) {
+      name = promptedName.trim();
+      myUsername = name;
+      localStorage.setItem('primavera-username', myUsername);
+      updateHeaderName();
+      if (currentView === 'compare') {
+        renderCompare();
+      }
+    } else {
+      name = 'Friend';
+    }
+  }
+  
   const baseUrl = window.location.origin + window.location.pathname;
   const ids = Array.from(mySchedule).join(',');
-  const shareUrl = `${baseUrl}?shared=${ids}&name=${encodeURIComponent(myUsername)}`;
+  const shareUrl = `${baseUrl}?shared=${ids}&name=${encodeURIComponent(name)}`;
   
   navigator.clipboard.writeText(shareUrl).then(() => {
     showToast("Share link copied to clipboard!");
