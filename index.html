@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Primavera 2026</title>
+  <meta name="description" content="Personal schedule and lineup for Primavera Sound Barcelona 2026.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <header class="glass-header">
+      <h1 class="logo">Primavera <span>'26</span><span id="header-user-name" style="font-size: 0.85rem; font-weight: normal; color: var(--text-secondary); margin-left: 0.5rem; border-left: 1px solid var(--glass-border); padding-left: 0.5rem; display: none;"></span></h1>
+      <button id="shareBtn" class="share-btn">Share</button>
+    </header>
+
+    <main id="main-content">
+      <!-- Dynamic content rendered here -->
+    </main>
+
+    <nav class="bottom-nav glass-nav">
+      <button class="nav-item active" data-view="lineup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        <span>Lineup</span>
+      </button>
+      <button class="nav-item" data-view="schedule">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <span>My Schedule</span>
+      </button>
+      <button class="nav-item" data-view="compare" id="navCompare">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <span>Compare</span>
+      </button>
+    </nav>
+  </div>
+  
+  <div id="import-dialog" class="import-dialog hidden">
+    <div class="dialog-content">
+      <h3>Import Shared Schedule</h3>
+      <p id="import-message">Would you like to import this schedule?</p>
+      <div class="dialog-input-group">
+        <label for="import-friend-name">Friend's Name:</label>
+        <input type="text" id="import-friend-name" placeholder="Enter name">
+      </div>
+      <div class="dialog-actions">
+        <button id="import-cancel" class="dialog-btn btn-secondary">Cancel</button>
+        <button id="import-confirm" class="dialog-btn btn-primary">Import</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="lineup.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
