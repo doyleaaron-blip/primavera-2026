@@ -1,4 +1,79 @@
 const DB_BUCKET = 'RBhPLuiX9Qn2uTiJDw4TyL';
+const SPOTIFY_CLIENT_ID = 'e0f156b7242c4119a9f1ec728f0a447f';
+const REDIRECT_URI = window.location.origin + window.location.pathname;
+
+function generateRandomString(length) {
+  let text = '';
+  let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  for (let i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+}
+
+async function generateCodeChallenge(codeVerifier) {
+  function base64encode(string) {
+    return btoa(String.fromCharCode.apply(null, new Uint8Array(string)))
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_')
+      .replace(/=+$/, '');
+  }
+  const encoder = new TextEncoder();
+  const data = encoder.encode(codeVerifier);
+  const digest = await window.crypto.subtle.digest('SHA-256', data);
+  return base64encode(digest);
+}
+
+async function initiateSpotifyAuth() {
+  const codeVerifier = generateRandomString(128);
+  window.localStorage.setItem('spotify_code_verifier', codeVerifier);
+  const codeChallenge = await generateCodeChallenge(codeVerifier);
+
+  const params = new URLSearchParams({
+    response_type: 'code',
+    client_id: SPOTIFY_CLIENT_ID,
+    scope: 'user-top-read',
+    code_challenge_method: 'S256',
+    code_challenge: codeChallenge,
+    redirect_uri: REDIRECT_URI
+  });
+  window.location.href = 'https://accounts.spotify.com/authorize?' + params.toString();
+}
+
+async function handleSpotifyCallback() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const code = urlParams.get('code');
+  if (code) {
+    const codeVerifier = window.localStorage.getItem('spotify_code_verifier');
+    const params = new URLSearchParams({
+      client_id: SPOTIFY_CLIENT_ID,
+      grant_type: 'authorization_code',
+      code: code,
+      redirect_uri: REDIRECT_URI,
+      code_verifier: codeVerifier
+    });
+
+    try {
+      const response = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params
+      });
+      const data = await response.json();
+      if (data.access_token) {
+        window.localStorage.setItem('spotify_access_token', data.access_token);
+      }
+    } catch (e) {
+      console.error('Spotify auth error:', e);
+    }
+    
+    urlParams.delete('code');
+    const newSearch = urlParams.toString() ? '?' + urlParams.toString() : '';
+    window.history.replaceState({}, document.title, window.location.pathname + newSearch);
+    return true;
+  }
+  return false;
+}
 
 // State
 let mySchedule = new Set(JSON.parse(localStorage.getItem('primavera-schedule')) || []);
@@ -41,6 +116,12 @@ function init() {
   updateHeaderName();
   syncMyScheduleToCloud();
   syncActiveFriendsFromCloud();
+
+  handleSpotifyCallback().then(handled => {
+    if (handled) {
+      switchView('for-you');
+    }
+  });
 
   // Check URL for shared schedule
   const urlParams = new URLSearchParams(window.location.search);
@@ -279,9 +360,124 @@ function switchView(view) {
     renderSchedule();
   } else if (view === 'compare') {
     renderCompare();
+  } else if (view === 'for-you') {
+    renderForYou();
   }
   
   setTimeout(updateLiveState, 100);
+}
+
+async function renderForYou() {
+  mainContent.innerHTML = '<div class="empty-state">Loading...</div>';
+  const token = window.localStorage.getItem('spotify_access_token');
+  
+  if (!token) {
+    mainContent.innerHTML = `
+      <div class="empty-state" style="padding-top: 2rem;">
+        <h2>Discover Your Lineup</h2>
+        <p style="margin: 1rem 0; font-size: 0.9rem;">Connect your Spotify account and we'll scan your Top Artists to find bands you'll love at Primavera.</p>
+        <button id="spotify-connect-btn" class="btn-spotify">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.84.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.84.241 1.2zM20.16 9.6C16.44 7.38 9.54 7.2 5.58 8.4c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.68-1.38 12.24-1.14 16.62 1.5.539.36.719 1.02.419 1.56-.299.42-1.02.599-1.8.24z"/></svg>
+          Connect Spotify
+        </button>
+      </div>
+    `;
+    document.getElementById('spotify-connect-btn').addEventListener('click', initiateSpotifyAuth);
+    return;
+  }
+
+  try {
+    const response = await fetch('https://api.spotify.com/v1/me/top/artists?limit=50', {
+      headers: { 'Authorization': 'Bearer ' + token }
+    });
+    
+    if (response.status === 401) {
+      window.localStorage.removeItem('spotify_access_token');
+      renderForYou();
+      return;
+    }
+    
+    if (!response.ok) throw new Error('Spotify API Error');
+    
+    const data = await response.json();
+    const topArtists = data.items;
+    const topArtistNames = topArtists.map(a => a.name.toLowerCase());
+    
+    const directMatches = lineup.filter(b => topArtistNames.includes(b.band.toLowerCase()));
+    
+    const genreCounts = {};
+    topArtists.forEach(a => {
+      if(a.genres) {
+        a.genres.forEach(g => {
+          genreCounts[g] = (genreCounts[g] || 0) + 1;
+        });
+      }
+    });
+    
+    const sortedGenres = Object.entries(genreCounts).sort((a,b) => b[1] - a[1]).map(e => e[0]);
+    const topGenres = sortedGenres.slice(0, 5);
+    
+    const genreMatches = lineup.filter(b => {
+      if (directMatches.find(d => d.id === b.id)) return false;
+      return b.genres && b.genres.some(g => topGenres.includes(g));
+    });
+
+    mainContent.innerHTML = '';
+    
+    const headerRow = document.createElement('div');
+    headerRow.style.display = 'flex';
+    headerRow.style.justifyContent = 'space-between';
+    headerRow.style.alignItems = 'center';
+    headerRow.style.marginBottom = '1.5rem';
+    headerRow.innerHTML = \`
+      <h2 style="font-size: 1.3rem; color: var(--accent-secondary);">Your Recommendations</h2>
+      <button id="disconnect-spotify" style="background: transparent; color: var(--text-secondary); border: none; font-size: 0.8rem; text-decoration: underline; cursor: pointer;">Disconnect</button>
+    \`;
+    mainContent.appendChild(headerRow);
+    document.getElementById('disconnect-spotify').addEventListener('click', () => {
+      window.localStorage.removeItem('spotify_access_token');
+      renderForYou();
+    });
+    
+    if (directMatches.length > 0) {
+      const directSec = document.createElement('div');
+      directSec.className = 'day-section';
+      directSec.innerHTML = \`<h3 class="day-header" style="top:0; font-size:1rem; color: var(--success-color);">Because you listen to them</h3>\`;
+      directMatches.forEach(band => {
+        const isSelected = mySchedule.has(band.id);
+        const card = createBandCard(band, isSelected, () => {
+          toggleBand(band.id);
+          renderForYou();
+        });
+        directSec.appendChild(card);
+      });
+      mainContent.appendChild(directSec);
+    }
+    
+    if (genreMatches.length > 0) {
+      const genreSec = document.createElement('div');
+      genreSec.className = 'day-section';
+      genreSec.innerHTML = \`<h3 class="day-header" style="top:0; font-size:1rem;">Because you like \${topGenres.slice(0,2).join(' & ')}</h3>\`;
+      genreMatches.slice(0, 15).forEach(band => {
+        const isSelected = mySchedule.has(band.id);
+        const card = createBandCard(band, isSelected, () => {
+          toggleBand(band.id);
+          renderForYou();
+        });
+        genreSec.appendChild(card);
+      });
+      mainContent.appendChild(genreSec);
+    }
+    
+    if (directMatches.length === 0 && genreMatches.length === 0) {
+      mainContent.innerHTML += \`<div class="empty-state">Couldn't find any direct matches based on your Spotify history.</div>\`;
+    }
+    
+  } catch(e) {
+    console.error(e);
+    mainContent.innerHTML = \`<div class="empty-state">Failed to load recommendations. Please try reconnecting.</div>\`;
+    window.localStorage.removeItem('spotify_access_token');
+  }
 }
 
 // Helper to sort festival times chronologically
