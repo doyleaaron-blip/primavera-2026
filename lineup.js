@@ -5,7 +5,7 @@ const lineup = [
     "band": "Ouineta",
     "time": "17:45",
     "stage": "Parc del Fòrum",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Local favorite bringing vibrant energy and genre-blending tracks to the stage."
   },
   {
     "id": "wed-2",
@@ -21,7 +21,7 @@ const lineup = [
     "band": "Guitarricadelafuente",
     "time": "20:15",
     "stage": "Parc del Fòrum",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A soulful Spanish artist praised for his raw, acoustic performances and deeply emotional songwriting."
   },
   {
     "id": "wed-4",
@@ -37,7 +37,7 @@ const lineup = [
     "band": "Mourn",
     "time": "18:00",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Acclaimed Catalan indie rock band known for their fierce, energetic punk-infused performances."
   },
   {
     "id": "thu-2",
@@ -45,7 +45,7 @@ const lineup = [
     "band": "Gara Durán",
     "time": "19:20",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Rising Spanish talent bringing poetic lyrics and captivating pop-folk melodies."
   },
   {
     "id": "thu-3",
@@ -53,7 +53,7 @@ const lineup = [
     "band": "Dani Dicostas",
     "time": "20:40",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Spanish pop artist recognized for her catchy, synth-driven indie pop and charismatic live presence."
   },
   {
     "id": "thu-4",
@@ -61,7 +61,7 @@ const lineup = [
     "band": "Cameron Winter",
     "time": "17:00",
     "stage": "Auditori Rockdelux",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A compelling vocalist and songwriter, bringing intimate and melodic performances to the festival."
   },
   {
     "id": "thu-5",
@@ -69,7 +69,7 @@ const lineup = [
     "band": "Lucrecia Dalt",
     "time": "19:00",
     "stage": "Auditori Rockdelux",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Experimental electronic artist whose avant-garde soundscapes are celebrated for their cinematic and eerie qualities."
   },
   {
     "id": "thu-6",
@@ -77,7 +77,7 @@ const lineup = [
     "band": "caroline",
     "time": "20:30",
     "stage": "Auditori Rockdelux",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Eight-piece post-rock ensemble delivering sprawling, improvisational pieces praised for their organic complexity."
   },
   {
     "id": "thu-7",
@@ -93,7 +93,7 @@ const lineup = [
     "band": "Gisela João",
     "time": "17:15",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: One of Portugal's leading fado singers, delivering breathtakingly emotional and traditional vocal performances."
   },
   {
     "id": "thu-9",
@@ -101,7 +101,7 @@ const lineup = [
     "band": "Men I Trust",
     "time": "18:50",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Beloved indie-pop trio. Critics praise their smooth, atmospheric grooves and incredibly soothing live presence."
   },
   {
     "id": "thu-10",
@@ -109,7 +109,7 @@ const lineup = [
     "band": "Oklou",
     "time": "20:50",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: French electronic producer and vocalist known for her ethereal, ambient pop and stunningly intricate sound design."
   },
   {
     "id": "thu-11",
@@ -125,7 +125,7 @@ const lineup = [
     "band": "2hollis",
     "time": "01:35",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Emerging underground artist blending hyperpop and aggressive electronic rap into a chaotic, high-energy live show."
   },
   {
     "id": "thu-13",
@@ -133,7 +133,7 @@ const lineup = [
     "band": "¥ØU$UK€ ¥UK1MAT$U",
     "time": "04:30",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Legendary Japanese DJ known for unpredictable, wildly eclectic sets that mix everything from noise to club anthems."
   },
   {
     "id": "thu-14",
@@ -141,7 +141,7 @@ const lineup = [
     "band": "Aiko el Grupo",
     "time": "17:30",
     "stage": "Estrella Damm",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: High-energy Spanish punk-pop band praised for their incredibly fun, fast-paced, and sarcastic anthems."
   },
   {
     "id": "thu-15",
@@ -149,7 +149,7 @@ const lineup = [
     "band": "Ravyn Lenae",
     "time": "19:35",
     "stage": "Estrella Damm",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: R&B powerhouse. Reviewers consistently highlight her stunning vocal range and lush, neo-soul production."
   },
   {
     "id": "thu-61",
@@ -173,7 +173,7 @@ const lineup = [
     "band": "Raly",
     "time": "18:00",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Exciting up-and-coming act bringing fresh rhythms and engaging stage presence."
   },
   {
     "id": "thu-18",
@@ -181,7 +181,7 @@ const lineup = [
     "band": "Geese",
     "time": "19:45",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Brooklyn post-punk band acclaimed for their unpredictable, sprawling, and fiercely energetic rock performances."
   },
   {
     "id": "thu-19",
@@ -197,7 +197,7 @@ const lineup = [
     "band": "TV Girl",
     "time": "00:30",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Indie pop favorites known for their sample-heavy, hypnotic grooves and sardonic lyrical themes."
   },
   {
     "id": "thu-21",
@@ -213,7 +213,7 @@ const lineup = [
     "band": "Sama Yax",
     "time": "18:00",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Dynamic DJ and producer known for weaving global rhythms and deep grooves into their sets."
   },
   {
     "id": "thu-23",
@@ -221,7 +221,7 @@ const lineup = [
     "band": "berlioz",
     "time": "19:00",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Rising electronic jazz artist whose smooth, lo-fi house beats have taken the internet by storm."
   },
   {
     "id": "thu-24",
@@ -229,7 +229,7 @@ const lineup = [
     "band": "Guedra Guedra",
     "time": "23:25",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Moroccan producer whose sets are an explosive celebration of North African rhythms and heavy club bass."
   },
   {
     "id": "thu-25",
@@ -237,7 +237,7 @@ const lineup = [
     "band": "Ahadadream",
     "time": "00:25",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: UK club music heavyweight known for his infectious, drum-heavy DJ sets that guarantee a massive dancefloor."
   },
   {
     "id": "thu-26",
@@ -245,7 +245,7 @@ const lineup = [
     "band": "BAMBII",
     "time": "02:00",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Toronto DJ and producer praised for her exhilarating, genre-defying sets blending dancehall, jungle, and techno."
   },
   {
     "id": "thu-27",
@@ -253,7 +253,7 @@ const lineup = [
     "band": "Ben UFO",
     "time": "03:00",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Widely considered one of the best DJs in the world, renowned for his seamless, genre-spanning selections."
   },
   {
     "id": "thu-28",
@@ -261,7 +261,7 @@ const lineup = [
     "band": "Paus",
     "time": "17:15",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Portuguese experimental rock band featuring two drum kits, known for their powerful, rhythmic live shows."
   },
   {
     "id": "thu-29",
@@ -269,7 +269,7 @@ const lineup = [
     "band": "The New Eves",
     "time": "18:55",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: UK folk-punk quartet praised for their raw, ritualistic, and deeply captivating performances."
   },
   {
     "id": "thu-30",
@@ -277,7 +277,7 @@ const lineup = [
     "band": "Agriculture",
     "time": "20:55",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: 'Ecstatic black metal' band from Los Angeles, celebrated for their intensely emotional and uplifting heavy music."
   },
   {
     "id": "thu-31",
@@ -285,7 +285,7 @@ const lineup = [
     "band": "Florence Road",
     "time": "23:00",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A vibrant new artist bringing energetic hooks and undeniable indie charm."
   },
   {
     "id": "thu-32",
@@ -293,7 +293,7 @@ const lineup = [
     "band": "Melt-Banana",
     "time": "01:30",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Legendary Japanese noise-rock duo. Their live shows are famously frenetic, ear-splittingly loud, and incredibly precise."
   },
   {
     "id": "thu-33",
@@ -301,7 +301,7 @@ const lineup = [
     "band": "VVV [Trippin'you]",
     "time": "03:40",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Spanish neo-bakalao trio. Critics highlight their intense, dark, and highly energetic electronic punk shows."
   },
   {
     "id": "thu-34",
@@ -309,7 +309,7 @@ const lineup = [
     "band": "Muna Khaled",
     "time": "18:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: An intriguing electronic act delivering atmospheric and deeply textured soundscapes."
   },
   {
     "id": "thu-35",
@@ -317,7 +317,7 @@ const lineup = [
     "band": "Toumba live",
     "time": "19:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Jordanian producer weaving traditional Levantine sounds into forward-thinking club music."
   },
   {
     "id": "thu-36",
@@ -325,7 +325,7 @@ const lineup = [
     "band": "Bclip",
     "time": "20:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Experimental club producer mixing Latin rhythms with heavy, aggressive electronic beats."
   },
   {
     "id": "thu-37",
@@ -333,7 +333,7 @@ const lineup = [
     "band": "iza tkm",
     "time": "21:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Innovative DJ bringing a fresh perspective to the underground club scene."
   },
   {
     "id": "thu-38",
@@ -341,7 +341,7 @@ const lineup = [
     "band": "DJ Playero",
     "time": "22:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A true pioneer of reggaeton, his sets are a masterclass in Latin dance music history and hype."
   },
   {
     "id": "thu-39",
@@ -349,7 +349,7 @@ const lineup = [
     "band": "xavisphone",
     "time": "23:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Emerging electronic act with a unique, internet-inspired sound."
   },
   {
     "id": "thu-40",
@@ -357,7 +357,7 @@ const lineup = [
     "band": "Proc Fiskal live",
     "time": "00:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Scottish producer known for his hyper-speed, incredibly intricate takes on grime and UK bass."
   },
   {
     "id": "thu-41",
@@ -365,7 +365,7 @@ const lineup = [
     "band": "Stein",
     "time": "01:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Delivering deep, resonant electronic grooves tailored for the late-night crowd."
   },
   {
     "id": "thu-42",
@@ -373,7 +373,7 @@ const lineup = [
     "band": "Rustie",
     "time": "02:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A hugely influential figure in maximalist electronic music, returning to deliver his signature euphoric drops."
   },
   {
     "id": "thu-43",
@@ -381,7 +381,7 @@ const lineup = [
     "band": "Zohar",
     "time": "03:30",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Experimental DJ and producer known for dark, brooding, and bass-heavy selections."
   },
   {
     "id": "thu-44",
@@ -389,7 +389,7 @@ const lineup = [
     "band": "Mina Galán",
     "time": "05:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Bringing a blend of intense electronic rhythms and atmospheric textures to the stage."
   },
   {
     "id": "thu-45",
@@ -397,7 +397,7 @@ const lineup = [
     "band": "Blood Orange",
     "time": "18:20",
     "stage": "Revolut",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Dev Hynes' acclaimed R&B project. Reviews praise his lush instrumentation and breathtakingly soulful performances."
   },
   {
     "id": "thu-46",
@@ -405,7 +405,7 @@ const lineup = [
     "band": "Alex G",
     "time": "20:50",
     "stage": "Revolut",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Indie rock cult hero. Critics adore his eclectic, lo-fi songwriting and unpredictable, mesmerizing live shows."
   },
   {
     "id": "thu-47",
@@ -413,7 +413,7 @@ const lineup = [
     "band": "Doja Cat",
     "time": "23:30",
     "stage": "Revolut",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Global pop/rap superstar. Her live performances are praised for their incredible choreography, stage design, and vocal talent."
   },
   {
     "id": "thu-48",
@@ -421,7 +421,7 @@ const lineup = [
     "band": "Hypnosis Therapy",
     "time": "16:30",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Exciting South Korean electronic/rap duo known for their futuristic, high-energy club anthems."
   },
   {
     "id": "thu-49",
@@ -429,7 +429,7 @@ const lineup = [
     "band": "Renaldo & Clara",
     "time": "18:05",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Catalan indie pop group celebrated for their delicate melodies and bittersweet songwriting."
   },
   {
     "id": "thu-50",
@@ -437,7 +437,7 @@ const lineup = [
     "band": "LaBlackie",
     "time": "19:55",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Rising Spanish rap artist known for her fierce flow, confident stage presence, and hard-hitting beats."
   },
   {
     "id": "thu-51",
@@ -445,7 +445,7 @@ const lineup = [
     "band": "Skullcrusher",
     "time": "21:55",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Ambient folk artist praised for her hauntingly beautiful vocals and deeply intimate songwriting."
   },
   {
     "id": "thu-52",
@@ -453,7 +453,7 @@ const lineup = [
     "band": "Rojuu",
     "time": "00:25",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Spanish emo-trap phenomenon with a massive cult following and wildly energetic, emotional live shows."
   },
   {
     "id": "thu-53",
@@ -461,7 +461,7 @@ const lineup = [
     "band": "Fcukers",
     "time": "02:40",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Rising NYC indie dance trio praised for their effortlessly cool, 90s-inspired house and pop fusion."
   },
   {
     "id": "thu-54",
@@ -469,7 +469,7 @@ const lineup = [
     "band": "Six Sex",
     "time": "04:35",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Argentinian reggaeton and club artist known for her unapologetic, hyper-energetic, and raunchy performances."
   },
   {
     "id": "thu-55",
@@ -477,7 +477,7 @@ const lineup = [
     "band": "Malibu",
     "time": "22:00",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: French ambient producer whose sets are described as breathtakingly beautiful, cinematic, and deeply emotional."
   },
   {
     "id": "thu-56",
@@ -485,7 +485,7 @@ const lineup = [
     "band": "Brìghde Chaimbeul",
     "time": "23:05",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Award-winning Scottish piper who creates hypnotic, drone-heavy ambient folk music."
   },
   {
     "id": "thu-57",
@@ -493,7 +493,7 @@ const lineup = [
     "band": "New York",
     "time": "00:10",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Captivating indie act bringing raw, energetic sounds reminiscent of the city's classic rock revival."
   },
   {
     "id": "thu-58",
@@ -501,7 +501,7 @@ const lineup = [
     "band": "neska",
     "time": "01:15",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Intriguing electronic act with a focus on immersive, rhythmic soundscapes."
   },
   {
     "id": "thu-59",
@@ -509,7 +509,7 @@ const lineup = [
     "band": "Oli XL Live",
     "time": "02:20",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Swedish producer known for his fragmented, fascinating, and highly original take on UK dance music."
   },
   {
     "id": "thu-60",
@@ -517,7 +517,7 @@ const lineup = [
     "band": "Anthony Naples",
     "time": "03:25",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Revered house music producer and DJ. His sets are a masterclass in deep, atmospheric grooves."
   },
   {
     "id": "fri-1",
@@ -525,7 +525,7 @@ const lineup = [
     "band": "Bombificadas",
     "time": "18:00",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Local Spanish act delivering energetic, punk-infused pop."
   },
   {
     "id": "fri-2",
@@ -533,7 +533,7 @@ const lineup = [
     "band": "Ouineta",
     "time": "19:20",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Local favorite bringing vibrant energy and genre-blending tracks to the stage."
   },
   {
     "id": "fri-3",
@@ -541,7 +541,7 @@ const lineup = [
     "band": "Paco Te Quiero",
     "time": "20:40",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Fun, irreverent Spanish indie-pop band known for their highly entertaining live shows."
   },
   {
     "id": "fri-4",
@@ -549,7 +549,7 @@ const lineup = [
     "band": "Dharmacide",
     "time": "22:00",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Madrid-based shoegaze and post-punk band delivering massive walls of reverb-drenched sound."
   },
   {
     "id": "fri-5",
@@ -557,7 +557,7 @@ const lineup = [
     "band": "Annahstasia",
     "time": "16:30",
     "stage": "Auditori Rockdelux",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Soulful folk singer-songwriter whose stunning vocal performances command absolute silence from the crowd."
   },
   {
     "id": "fri-6",
@@ -565,7 +565,7 @@ const lineup = [
     "band": "mark william lewis",
     "time": "18:00",
     "stage": "Auditori Rockdelux",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: UK indie artist praised for his hushed, incredibly intimate, and poetic songwriting."
   },
   {
     "id": "fri-7",
@@ -573,7 +573,7 @@ const lineup = [
     "band": "Einstürzende Neubauten",
     "time": "19:30",
     "stage": "Auditori Rockdelux",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Industrial music pioneers. Their legendary live shows feature custom-built instruments and avant-garde intensity."
   },
   {
     "id": "fri-8",
@@ -581,7 +581,7 @@ const lineup = [
     "band": "Merzbow",
     "time": "21:00",
     "stage": "Auditori Rockdelux",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: The godfather of Japanese noise music. A Merzbow live set is a famous test of endurance and sonic extremity."
   },
   {
     "id": "fri-9",
@@ -589,7 +589,7 @@ const lineup = [
     "band": "Pavvla",
     "time": "17:15",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Catalan indie-pop artist known for her dark, electronic-tinged folk and emotive vocals."
   },
   {
     "id": "fri-10",
@@ -597,7 +597,7 @@ const lineup = [
     "band": "Buscabulla",
     "time": "18:50",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Puerto Rican duo celebrated for their effortlessly cool, psychedelic Caribbean dream-pop."
   },
   {
     "id": "fri-11",
@@ -605,7 +605,7 @@ const lineup = [
     "band": "Ralphie Choo",
     "time": "20:55",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Genre-defying Spanish artist mixing flamenco, pop, and electronic music into critically acclaimed, chaotic live shows."
   },
   {
     "id": "fri-12",
@@ -613,7 +613,7 @@ const lineup = [
     "band": "Amaarae",
     "time": "23:20",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Afro-fusion star. Reviewers praise her whispering vocal style and incredibly slick, genre-bending pop anthems."
   },
   {
     "id": "fri-13",
@@ -629,7 +629,7 @@ const lineup = [
     "band": "KI/KI",
     "time": "04:10",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Dutch techno DJ whose high-BPM, trance-infused sets are legendary for their relentless, euphoric energy."
   },
   {
     "id": "fri-15",
@@ -637,7 +637,7 @@ const lineup = [
     "band": "NewDad",
     "time": "17:40",
     "stage": "Estrella Damm",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Irish indie rock band acclaimed for their moody, 90s-inspired alternative rock and shoegaze textures."
   },
   {
     "id": "fri-16",
@@ -685,7 +685,7 @@ const lineup = [
     "band": "Somos la Herencia",
     "time": "18:00",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Madrid post-punk outfit blending darkwave synths with aggressive, atmospheric rock."
   },
   {
     "id": "fri-22",
@@ -693,7 +693,7 @@ const lineup = [
     "band": "Rilo Kiley",
     "time": "19:50",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Beloved indie rock band. Fans adore Jenny Lewis's sharp lyrics and the band's emotionally resonant catalog."
   },
   {
     "id": "fri-23",
@@ -701,7 +701,7 @@ const lineup = [
     "band": "Role Model",
     "time": "22:00",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Alt-pop singer praised for his charismatic stage presence, catchy hooks, and relatable lyricism."
   },
   {
     "id": "fri-24",
@@ -709,7 +709,7 @@ const lineup = [
     "band": "Jade",
     "time": "00:30",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A highly anticipated solo performance bringing polished pop vocals and dynamic choreography."
   },
   {
     "id": "fri-25",
@@ -725,7 +725,7 @@ const lineup = [
     "band": "Malena",
     "time": "18:00",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Up-and-coming DJ bringing a finely curated mix of electronic rhythms."
   },
   {
     "id": "fri-27",
@@ -733,7 +733,7 @@ const lineup = [
     "band": "Powder",
     "time": "19:30",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Japanese DJ and producer known for incredibly subtle, hypnotic, and emotionally nuanced house sets."
   },
   {
     "id": "fri-28",
@@ -741,7 +741,7 @@ const lineup = [
     "band": "Call Super",
     "time": "21:00",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Highly respected DJ praised for his technically flawless and endlessly surprising, genre-spanning mixes."
   },
   {
     "id": "fri-29",
@@ -749,7 +749,7 @@ const lineup = [
     "band": "DJ Koolt",
     "time": "22:30",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Uruguayan underground legend. His vinyl-only sets are a masterclass in deep, rolling house and techno."
   },
   {
     "id": "fri-30",
@@ -757,7 +757,7 @@ const lineup = [
     "band": "Roza Terenzi Live",
     "time": "00:00",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Australian producer delivering bouncy, retro-futuristic electro and breakbeat live sets."
   },
   {
     "id": "fri-31",
@@ -765,7 +765,7 @@ const lineup = [
     "band": "Aurora Halal",
     "time": "01:00",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Brooklyn-based techno producer known for her deep, psychedelic, and intensely immersive live hardware sets."
   },
   {
     "id": "fri-32",
@@ -773,7 +773,7 @@ const lineup = [
     "band": "Sama’ Abdulhadi",
     "time": "02:30",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Palestinian techno pioneer. Her DJ sets are famous worldwide for their massive, hard-hitting energy."
   },
   {
     "id": "fri-33",
@@ -781,7 +781,7 @@ const lineup = [
     "band": "Las Petunias",
     "time": "17:20",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Fun, energetic Spanish punk-pop trio with catchy melodies and relatable lyrics."
   },
   {
     "id": "fri-34",
@@ -789,7 +789,7 @@ const lineup = [
     "band": "Ósserp",
     "time": "19:00",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Brutal Catalan death metal/grindcore band. Their live shows are intense, aggressive, and highly technical."
   },
   {
     "id": "fri-35",
@@ -797,7 +797,7 @@ const lineup = [
     "band": "Water From Your Eyes",
     "time": "21:00",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Experimental pop duo praised for their deadpan delivery and brilliantly chaotic, unpredictable song structures."
   },
   {
     "id": "fri-36",
@@ -805,7 +805,7 @@ const lineup = [
     "band": "Shlohmo",
     "time": "23:15",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Influential electronic producer. His live shows blend dark, heavy bass with melancholic, guitar-driven textures."
   },
   {
     "id": "fri-37",
@@ -813,7 +813,7 @@ const lineup = [
     "band": "Kylesa",
     "time": "01:35",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Legendary sludge metal band returning to the stage, featuring dual drummers and massive, psychedelic riffs."
   },
   {
     "id": "fri-38",
@@ -821,7 +821,7 @@ const lineup = [
     "band": "Tiyumii",
     "time": "18:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A fresh electronic act setting the mood with deep, atmospheric beats."
   },
   {
     "id": "fri-39",
@@ -829,7 +829,7 @@ const lineup = [
     "band": "Dj Khalipha",
     "time": "19:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Exciting DJ bringing a mix of global club sounds and high-energy rhythms."
   },
   {
     "id": "fri-40",
@@ -837,7 +837,7 @@ const lineup = [
     "band": "GЯEG",
     "time": "20:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Mauritian DJ based in Paris, known for explosive sets blending dancehall, techno, and afro-club sounds."
   },
   {
     "id": "fri-41",
@@ -845,7 +845,7 @@ const lineup = [
     "band": "The Avalanches DJ Set",
     "time": "21:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Legendary sample-plunderers. Their DJ sets are a joyous, unpredictable celebration of music history."
   },
   {
     "id": "fri-42",
@@ -853,7 +853,7 @@ const lineup = [
     "band": "Loukeman",
     "time": "22:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Emerging electronic producer blending sample-heavy house with deep, emotional grooves."
   },
   {
     "id": "fri-43",
@@ -861,7 +861,7 @@ const lineup = [
     "band": "Brutalismus 3000",
     "time": "23:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Berlin duo mixing gabber, techno, and punk into incredibly intense, sweaty, and viral live performances."
   },
   {
     "id": "fri-44",
@@ -869,7 +869,7 @@ const lineup = [
     "band": "Brat Star DJ Set",
     "time": "00:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Versatile DJ known for chaotic, high-energy sets that jump from rap to hard techno seamlessly."
   },
   {
     "id": "fri-45",
@@ -877,7 +877,7 @@ const lineup = [
     "band": "Hannah Diamond (DJ)",
     "time": "01:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: PC Music icon. Her DJ sets are a glittery, hyper-pop sugar rush filled with exclusive edits."
   },
   {
     "id": "fri-46",
@@ -885,7 +885,7 @@ const lineup = [
     "band": "Hekt",
     "time": "02:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Delivering hard-hitting, fast-paced electronic sets for the late-night club crowd."
   },
   {
     "id": "fri-47",
@@ -893,7 +893,7 @@ const lineup = [
     "band": "deBasement",
     "time": "02:45",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Underground collective bringing raw, uncompromising techno and bass music."
   },
   {
     "id": "fri-48",
@@ -901,7 +901,7 @@ const lineup = [
     "band": "Debit",
     "time": "03:45",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Mexican-American producer acclaimed for blending indigenous instrumentation with experimental club music."
   },
   {
     "id": "fri-49",
@@ -909,7 +909,7 @@ const lineup = [
     "band": "Dave P.",
     "time": "04:45",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Making Time legend. His DJ sets are a masterclass in euphoric, futuristic electronic dance music."
   },
   {
     "id": "fri-50",
@@ -917,7 +917,7 @@ const lineup = [
     "band": ".bd.",
     "time": "16:35",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Intriguing experimental artist pushing the boundaries of sonic texture."
   },
   {
     "id": "fri-51",
@@ -925,7 +925,7 @@ const lineup = [
     "band": "Juicy Bae",
     "time": "18:05",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Spanish R&B and trap artist celebrated for her smooth vocals and commanding stage presence."
   },
   {
     "id": "fri-52",
@@ -933,7 +933,7 @@ const lineup = [
     "band": "Texas Is The Reason",
     "time": "19:50",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: 90s emo legends. Their live shows are highly emotional, nostalgic, and incredibly cathartic."
   },
   {
     "id": "fri-53",
@@ -941,7 +941,7 @@ const lineup = [
     "band": "Disobey",
     "time": "22:05",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: High-energy punk act bringing rebellious anthems and a wild mosh pit."
   },
   {
     "id": "fri-54",
@@ -949,7 +949,7 @@ const lineup = [
     "band": "fakemink",
     "time": "00:25",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Exciting electronic producer delivering forward-thinking club edits."
   },
   {
     "id": "fri-55",
@@ -957,7 +957,7 @@ const lineup = [
     "band": "Cara Delevingne",
     "time": "02:30",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: The model-turned-artist brings a highly anticipated, exclusive performance to the festival."
   },
   {
     "id": "fri-56",
@@ -965,7 +965,7 @@ const lineup = [
     "band": "Underground Resistance",
     "time": "04:05",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Detroit techno royalty. Their live shows are politically charged, technically brilliant, and deeply soulful."
   },
   {
     "id": "fri-57",
@@ -973,7 +973,7 @@ const lineup = [
     "band": "Joan La Barbara",
     "time": "22:00",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Avant-garde composer and vocalist. Her performances are celebrated for their breathtaking vocal techniques."
   },
   {
     "id": "fri-58",
@@ -981,7 +981,7 @@ const lineup = [
     "band": "Matmos",
     "time": "22:50",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Experimental electronic duo famous for creating fascinating music out of incredibly unusual recorded samples."
   },
   {
     "id": "fri-59",
@@ -989,7 +989,7 @@ const lineup = [
     "band": "Rashad Becker",
     "time": "23:40",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Mastering engineer and producer delivering complex, highly textured, and abstract electronic performances."
   },
   {
     "id": "fri-60",
@@ -997,7 +997,7 @@ const lineup = [
     "band": "Mohammad Reza Mortazavi",
     "time": "00:45",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Iranian percussion master. His solo tombak performances are mind-bendingly complex and mesmerizing."
   },
   {
     "id": "fri-61",
@@ -1005,7 +1005,7 @@ const lineup = [
     "band": "Marc Piñol",
     "time": "02:20",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Barcelona club legend. His DJ sets are vast, eclectic journeys through the finest house and techno."
   },
   {
     "id": "fri-62",
@@ -1013,7 +1013,7 @@ const lineup = [
     "band": "Iglooghost",
     "time": "03:55",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: UK producer known for hyperactive, wildly complex electronic music paired with a rich, fantastical visual world."
   },
   {
     "id": "sat-1",
@@ -1021,7 +1021,7 @@ const lineup = [
     "band": "Amiga Date Cuenta",
     "time": "18:00",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Relatable, fun, and energetic Spanish indie pop."
   },
   {
     "id": "sat-2",
@@ -1029,7 +1029,7 @@ const lineup = [
     "band": "Perfecto Miserable",
     "time": "19:20",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Shoegaze and dream-pop act delivering nostalgic, reverb-heavy melodies."
   },
   {
     "id": "sat-3",
@@ -1037,7 +1037,7 @@ const lineup = [
     "band": "Corte!",
     "time": "20:40",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Sharp, punchy post-punk with aggressive basslines and biting lyrics."
   },
   {
     "id": "sat-4",
@@ -1045,7 +1045,7 @@ const lineup = [
     "band": "SVSTO",
     "time": "22:00",
     "stage": "Aperol Island of Joy",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Blending electronic pop with indie sensibilities for a highly danceable set."
   },
   {
     "id": "sat-5",
@@ -1053,7 +1053,7 @@ const lineup = [
     "band": "These New Puritans",
     "time": "18:00",
     "stage": "Auditori Rockdelux",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Acclaimed art-rock band. Critics praise their orchestral, highly ambitious, and dramatic live performances."
   },
   {
     "id": "sat-6",
@@ -1061,7 +1061,7 @@ const lineup = [
     "band": "Beverly Glenn-Copeland and Elizabeth Copeland",
     "time": "19:30",
     "stage": "Auditori Rockdelux",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Legendary ambient folk artist. Reviews highlight the profound, tear-jerking spirituality of his live shows."
   },
   {
     "id": "sat-7",
@@ -1069,7 +1069,7 @@ const lineup = [
     "band": "Anna von Hausswolff",
     "time": "21:00",
     "stage": "Auditori Rockdelux",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Swedish musician famous for playing massive church organs, creating terrifyingly beautiful, doom-laden music."
   },
   {
     "id": "sat-8",
@@ -1077,7 +1077,7 @@ const lineup = [
     "band": "Jimena Amarillo",
     "time": "17:10",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Rising Spanish star praised for her deeply honest, romantic, and lo-fi pop-folk songwriting."
   },
   {
     "id": "sat-9",
@@ -1085,7 +1085,7 @@ const lineup = [
     "band": "Grace Ives",
     "time": "18:10",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Brooklyn synth-pop artist. Critics love her punchy, infectious, and incredibly fun solo live performances."
   },
   {
     "id": "sat-10",
@@ -1093,7 +1093,7 @@ const lineup = [
     "band": "rusowsky",
     "time": "21:15",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Key figure in the Spanish bedroom pop scene, blending classical training with lo-fi beats and autotune."
   },
   {
     "id": "sat-11",
@@ -1101,7 +1101,7 @@ const lineup = [
     "band": "Dijon",
     "time": "23:20",
     "stage": "Cupra",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: R&B/indie artist. Reviews constantly praise his incredibly raw, emotionally unhinged, and spontaneous live band performances."
   },
   {
     "id": "sat-12",
@@ -1109,7 +1109,7 @@ const lineup = [
     "band": "Knocked Loose",
     "time": "01:35",
     "stage": "Cupra",
-    "description": "AI Summary: Hardcore heavyweights. Reviews describe their live shows as viscerally aggressive, flawlessly executed, and intensely cathartic."
+    "description": "AI Summary: Rising act bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
   },
   {
     "id": "sat-13",
@@ -1133,7 +1133,7 @@ const lineup = [
     "band": "My Bloody Valentine",
     "time": "22:05",
     "stage": "Estrella Damm",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: The absolute masters of shoegaze. Their live shows are famously, beautifully, and physically deafening."
   },
   {
     "id": "sat-16",
@@ -1149,7 +1149,7 @@ const lineup = [
     "band": "Bestia Bebé",
     "time": "17:50",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Argentine indie rock band known for their infectious melodies and stadium-ready rock anthems."
   },
   {
     "id": "sat-18",
@@ -1157,7 +1157,7 @@ const lineup = [
     "band": "Sudan Archives",
     "time": "19:00",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Singer and violinist whose live shows are celebrated for their incredible swagger, musicianship, and R&B grooves."
   },
   {
     "id": "sat-19",
@@ -1165,7 +1165,7 @@ const lineup = [
     "band": "Ashnikko",
     "time": "20:15",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Alt-pop rapper. Fans adore her visually wild, unapologetic, and fiercely empowering live shows."
   },
   {
     "id": "sat-20",
@@ -1173,7 +1173,7 @@ const lineup = [
     "band": "Marina",
     "time": "00:40",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Pop royalty. Her performances are praised for her operatic vocals and incredibly loyal, energetic fanbase."
   },
   {
     "id": "sat-21",
@@ -1181,7 +1181,7 @@ const lineup = [
     "band": "Kneecap",
     "time": "03:00",
     "stage": "Occident",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Irish hip-hop trio. Critics highlight their wildly energetic, rebellious, and politically charged bilingual performances."
   },
   {
     "id": "sat-22",
@@ -1189,7 +1189,7 @@ const lineup = [
     "band": "M8NSE",
     "time": "18:00",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Fresh electronic act delivering deep, bass-heavy club rhythms."
   },
   {
     "id": "sat-23",
@@ -1197,7 +1197,7 @@ const lineup = [
     "band": "Florentino b2b dj g2g",
     "time": "19:30",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A massive back-to-back set guaranteed to deliver high-energy reggaeton, club edits, and heavy bass."
   },
   {
     "id": "sat-24",
@@ -1205,7 +1205,7 @@ const lineup = [
     "band": "Safety Trance Live AV",
     "time": "21:35",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: High-BPM reggaeton and techno fusion, paired with intense and chaotic visual art."
   },
   {
     "id": "sat-25",
@@ -1213,7 +1213,7 @@ const lineup = [
     "band": "Lechuga Zafiro & Verraco: Hyperverbena",
     "time": "22:30",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A special collaboration mixing forward-thinking Latin club sounds with intricate electronic percussion."
   },
   {
     "id": "sat-26",
@@ -1221,7 +1221,7 @@ const lineup = [
     "band": "mobilegirl",
     "time": "23:45",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Berlin DJ known for her playful, hyper-energetic blends of R&B, techno, and global club music."
   },
   {
     "id": "sat-27",
@@ -1229,7 +1229,7 @@ const lineup = [
     "band": "Mechatok Live",
     "time": "01:15",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Swedish producer creating glossy, emotional, and hyper-melodic electronic pop and club music."
   },
   {
     "id": "sat-28",
@@ -1237,7 +1237,7 @@ const lineup = [
     "band": "u.r.trax Live",
     "time": "02:05",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Parisian techno prodigy delivering fast, trippy, and relentless live hardware sets."
   },
   {
     "id": "sat-29",
@@ -1245,7 +1245,7 @@ const lineup = [
     "band": "JASSS",
     "time": "02:55",
     "stage": "Plenitude",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Acclaimed DJ and producer. Her sets are a masterclass in dark, industrial, and unpredictable techno."
   },
   {
     "id": "sat-30",
@@ -1253,7 +1253,7 @@ const lineup = [
     "band": "The Sophs",
     "time": "18:50",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Charming indie rock with earworm melodies and a great live dynamic."
   },
   {
     "id": "sat-31",
@@ -1261,7 +1261,7 @@ const lineup = [
     "band": "Smerz",
     "time": "20:55",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Norwegian duo blending R&B vocals with stark, minimal, and experimental electronic production."
   },
   {
     "id": "sat-32",
@@ -1269,7 +1269,7 @@ const lineup = [
     "band": "Lambrini Girls",
     "time": "23:10",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Brighton punk band. Their live shows are famous for being fiercely political, chaotic, and incredibly fun."
   },
   {
     "id": "sat-33",
@@ -1277,7 +1277,7 @@ const lineup = [
     "band": "Femtanyl",
     "time": "01:30",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Breakout hyperpop and breakcore artist. Expect incredibly fast, aggressive, and internet-poisoned energy."
   },
   {
     "id": "sat-34",
@@ -1285,7 +1285,7 @@ const lineup = [
     "band": "Ninajirachi",
     "time": "03:40",
     "stage": "Port",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Australian producer delivering glossy, heavy, and meticulously sound-designed club pop."
   },
   {
     "id": "sat-35",
@@ -1293,7 +1293,7 @@ const lineup = [
     "band": "Curated by SONNY",
     "time": "18:00",
     "stage": "Cupra Pulse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A special stage takeover featuring hand-picked, cutting-edge electronic and club artists."
   },
   {
     "id": "sat-36",
@@ -1301,7 +1301,7 @@ const lineup = [
     "band": "Barry B",
     "time": "17:15",
     "stage": "Revolut",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Rising Spanish artist blending indie rock with contemporary pop elements."
   },
   {
     "id": "sat-37",
@@ -1309,7 +1309,7 @@ const lineup = [
     "band": "Baxter Dury",
     "time": "18:30",
     "stage": "Revolut",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Suave, spoken-word indie rock. Reviewers love his sleazy, charming, and highly theatrical stage persona."
   },
   {
     "id": "sat-38",
@@ -1333,7 +1333,7 @@ const lineup = [
     "band": "Ven’nus",
     "time": "16:35",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Catalan artist bringing soft, electronic-infused indie pop with a beautifully melancholic edge."
   },
   {
     "id": "sat-41",
@@ -1341,7 +1341,7 @@ const lineup = [
     "band": "Depresión Sonora",
     "time": "18:00",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Spanish post-punk. Fans resonate deeply with their danceable, gloomy anthems about modern life."
   },
   {
     "id": "sat-42",
@@ -1349,7 +1349,7 @@ const lineup = [
     "band": "Gelli Haha",
     "time": "19:45",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Quirky, unpredictable, and highly entertaining alternative pop."
   },
   {
     "id": "sat-52",
@@ -1357,7 +1357,7 @@ const lineup = [
     "band": "Touché Amoré",
     "time": "22:00",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Post-hardcore legends. Their live shows are famously passionate, emotionally devastating, and full of crowd-surfing."
   },
   {
     "id": "sat-43",
@@ -1365,7 +1365,7 @@ const lineup = [
     "band": "Joey Valence & Brae",
     "time": "00:25",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: High-energy rap duo heavily inspired by 90s boom-bap and the Beastie Boys. Incredibly fun live."
   },
   {
     "id": "sat-44",
@@ -1373,7 +1373,7 @@ const lineup = [
     "band": "Nick León Live",
     "time": "02:50",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Miami producer known for his massive global club hits. His live sets blend Latin percussion with deep techno."
   },
   {
     "id": "sat-45",
@@ -1381,7 +1381,7 @@ const lineup = [
     "band": "Ecco2k",
     "time": "04:35",
     "stage": "Schwarzkopf",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Drain Gang member. His ethereal, experimental pop performances are highly stylized and fiercely beloved by fans."
   },
   {
     "id": "sat-46",
@@ -1389,7 +1389,7 @@ const lineup = [
     "band": "res_",
     "time": "22:00",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Delivering deep, cerebral techno for the dedicated warehouse crowd."
   },
   {
     "id": "sat-47",
@@ -1397,7 +1397,7 @@ const lineup = [
     "band": "DJ Marcelle",
     "time": "23:00",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Legendary Dutch DJ who plays with three turntables, mixing the most bizarre and chaotic records into a danceable set."
   },
   {
     "id": "sat-48",
@@ -1405,7 +1405,7 @@ const lineup = [
     "band": "Shackleton Live",
     "time": "00:30",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: UK bass pioneer. His live sets are dark, polyrhythmic, and intensely psychedelic tribal journeys."
   },
   {
     "id": "sat-49",
@@ -1413,7 +1413,7 @@ const lineup = [
     "band": "Beatrice M.",
     "time": "01:30",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Bringing deep, rolling basslines and intricate electronic textures."
   },
   {
     "id": "sat-50",
@@ -1421,7 +1421,7 @@ const lineup = [
     "band": "A Guy Called Gerald Live",
     "time": "03:00",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Acid house and jungle royalty. A masterclass in vintage, hardware-driven dance music."
   },
   {
     "id": "sat-51",
@@ -1429,7 +1429,7 @@ const lineup = [
     "band": "DJ Nobu",
     "time": "04:00",
     "stage": "The Levi's Warehouse",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Japanese techno master. Reviewers revere his highly psychedelic, deeply hypnotic, and flawlessly mixed sets."
   },
   {
     "id": "sun-1",
@@ -1437,7 +1437,7 @@ const lineup = [
     "band": "Greta",
     "time": "15:00",
     "stage": "Parc del Fòrum",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: A fresh voice in indie pop, bringing smooth vocals and engaging stage presence."
   },
   {
     "id": "sun-2",
@@ -1445,7 +1445,7 @@ const lineup = [
     "band": "BLOND:ISH",
     "time": "16:30",
     "stage": "Parc del Fòrum",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Tech-house superstar. Her sets are known for their positive energy, uplifting vocals, and massive festival drops."
   },
   {
     "id": "sun-3",
@@ -1453,7 +1453,7 @@ const lineup = [
     "band": "Joseph Capriati",
     "time": "18:00",
     "stage": "Parc del Fòrum",
-    "description": "AI Summary: Rising act at Primavera Sound bringing a highly anticipated mix of rhythm, melody, and unique festival energy."
+    "description": "AI Summary: Italian techno giant. Famous for his marathon sets and driving, relentless big-room grooves."
   },
   {
     "id": "sun-4",
