@@ -418,11 +418,31 @@ async function renderForYou() {
     const sortedGenres = Object.entries(genreCounts).sort((a,b) => b[1] - a[1]).map(e => e[0]);
     const topGenres = sortedGenres.slice(0, 5);
     
-    const genreMatches = lineup.filter(b => {
-      if (mySchedule.has(b.id) || dismissedBands.has(b.id)) return false;
-      if (directMatches.find(d => d.id === b.id)) return false;
-      return b.genres && b.genres.some(g => topGenres.includes(g));
+    const topGenreWords = new Set();
+    sortedGenres.slice(0, 15).forEach(g => {
+      g.split(/[\s-]+/).forEach(w => {
+        if (w.length > 2) topGenreWords.add(w.toLowerCase());
+      });
     });
+    
+    const scoredBands = lineup.map(b => {
+      if (mySchedule.has(b.id) || dismissedBands.has(b.id) || directMatches.find(d => d.id === b.id)) {
+        return { band: b, score: -1 };
+      }
+      
+      let score = 0;
+      if (b.genres) {
+        b.genres.forEach(g => {
+          g.split(/[\s-]+/).forEach(w => {
+            if (topGenreWords.has(w.toLowerCase())) score += 1;
+          });
+        });
+      }
+      return { band: b, score };
+    }).filter(x => x.score > 0);
+    
+    scoredBands.sort((a,b) => b.score - a.score);
+    const genreMatches = scoredBands.map(x => x.band);
 
     mainContent.innerHTML = '';
     
