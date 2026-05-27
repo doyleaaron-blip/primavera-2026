@@ -806,10 +806,7 @@ function renderCompare() {
         });
         
         // Build card layout
-        const cardContainer = card.querySelector('.band-info');
-        if (cardContainer) {
-          card.appendChild(stack);
-        }
+        card.appendChild(stack);
         
         content.appendChild(card);
         item.appendChild(timeCol);
