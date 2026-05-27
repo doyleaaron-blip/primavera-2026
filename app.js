@@ -77,6 +77,7 @@ async function handleSpotifyCallback() {
 
 // State
 let mySchedule = new Set(JSON.parse(localStorage.getItem('primavera-schedule')) || []);
+let dismissedBands = new Set(JSON.parse(localStorage.getItem('primavera-dismissed')) || []);
 let myUsername = localStorage.getItem('primavera-username') || 'Me';
 
 let myUserId = localStorage.getItem('primavera-user-id');
@@ -403,7 +404,7 @@ async function renderForYou() {
     const topArtists = data.items;
     const topArtistNames = topArtists.map(a => a.name.toLowerCase());
     
-    const directMatches = lineup.filter(b => topArtistNames.includes(b.band.toLowerCase()));
+    const directMatches = lineup.filter(b => topArtistNames.includes(b.band.toLowerCase()) && !mySchedule.has(b.id) && !dismissedBands.has(b.id));
     
     const genreCounts = {};
     topArtists.forEach(a => {
@@ -418,6 +419,7 @@ async function renderForYou() {
     const topGenres = sortedGenres.slice(0, 5);
     
     const genreMatches = lineup.filter(b => {
+      if (mySchedule.has(b.id) || dismissedBands.has(b.id)) return false;
       if (directMatches.find(d => d.id === b.id)) return false;
       return b.genres && b.genres.some(g => topGenres.includes(g));
     });
@@ -448,6 +450,10 @@ async function renderForYou() {
         const card = createBandCard(band, isSelected, () => {
           toggleBand(band.id);
           renderForYou();
+        }, () => {
+          dismissedBands.add(band.id);
+          localStorage.setItem('primavera-dismissed', JSON.stringify([...dismissedBands]));
+          renderForYou();
         });
         directSec.appendChild(card);
       });
@@ -462,6 +468,10 @@ async function renderForYou() {
         const isSelected = mySchedule.has(band.id);
         const card = createBandCard(band, isSelected, () => {
           toggleBand(band.id);
+          renderForYou();
+        }, () => {
+          dismissedBands.add(band.id);
+          localStorage.setItem('primavera-dismissed', JSON.stringify([...dismissedBands]));
           renderForYou();
         });
         genreSec.appendChild(card);
@@ -806,7 +816,12 @@ function renderCompare() {
         });
         
         // Build card layout
-        card.appendChild(stack);
+        const previewLinks = card.querySelector('.preview-links');
+        if (previewLinks) {
+          previewLinks.appendChild(stack);
+        } else {
+          card.appendChild(stack);
+        }
         
         content.appendChild(card);
         item.appendChild(timeCol);
@@ -966,7 +981,7 @@ function renderCompare() {
 }
 
 // Helpers
-function createBandCard(band, isSelected, onClick) {
+function createBandCard(band, isSelected, onClick, onDismiss) {
   const card = document.createElement('div');
   card.className = `band-card ${isSelected ? 'selected' : ''}`;
   card.dataset.bandData = JSON.stringify({ day: band.day, time: band.time });
@@ -979,6 +994,11 @@ function createBandCard(band, isSelected, onClick) {
       <div class="band-header-row">
         <h3>${band.band} <span class="live-badge" style="display: none;">LIVE</span></h3>
         <div class="preview-links">
+          ${onDismiss ? `
+            <button class="dismiss-btn" title="Dismiss" onclick="event.stopPropagation()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          ` : ''}
           <a href="${spotifyUrl}" target="_blank" title="Listen on Spotify" onclick="event.stopPropagation()">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.84.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.84.241 1.2zM20.16 9.6C16.44 7.38 9.54 7.2 5.58 8.4c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.68-1.38 12.24-1.14 16.62 1.5.539.36.719 1.02.419 1.56-.299.42-1.02.599-1.8.24z"/></svg>
           </a>
@@ -1001,6 +1021,16 @@ function createBandCard(band, isSelected, onClick) {
       onClick();
       card.classList.toggle('selected');
     });
+  }
+  
+  if (onDismiss) {
+    const dismissBtn = card.querySelector('.dismiss-btn');
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        onDismiss();
+      });
+    }
   }
 
   return card;

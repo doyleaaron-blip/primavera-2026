@@ -745,6 +745,21 @@ main {
   color: var(--accent-secondary);
 }
 
+.preview-links .dismiss-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.preview-links .dismiss-btn:hover {
+  color: #ff4444;
+}
+
 .band-description {
   font-size: 0.8rem;
   color: var(--text-secondary);
