@@ -26,6 +26,8 @@ try {
 }
 
 let currentView = 'lineup';
+let searchQuery = '';
+let stageFilter = '';
 
 // DOM Elements
 const mainContent = document.getElementById('main-content');
@@ -64,6 +66,14 @@ function init() {
   });
 
   shareBtn.addEventListener('click', handleShare);
+
+  // Jump to Live FAB
+  jumpLiveBtn = document.createElement('button');
+  jumpLiveBtn.className = 'jump-live-btn hidden';
+  jumpLiveBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>';
+  document.body.appendChild(jumpLiveBtn);
+  
+  setInterval(updateLiveState, 60000); // check every minute
 
   // Initial Render
   switchView(currentView);
@@ -270,6 +280,8 @@ function switchView(view) {
   } else if (view === 'compare') {
     renderCompare();
   }
+  
+  setTimeout(updateLiveState, 100);
 }
 
 // Helper to sort festival times chronologically
@@ -287,6 +299,11 @@ function groupLineupByDay(bandsToInclude = null) {
   lineup.forEach(band => {
     if (bandsToInclude && !bandsToInclude.has(band.id)) return;
     
+    if (!bandsToInclude && currentView === 'lineup') {
+      if (searchQuery && !band.band.toLowerCase().includes(searchQuery.toLowerCase())) return;
+      if (stageFilter && band.stage !== stageFilter) return;
+    }
+    
     if (!grouped[band.day]) {
       grouped[band.day] = [];
     }
@@ -296,7 +313,54 @@ function groupLineupByDay(bandsToInclude = null) {
 }
 
 function renderLineup() {
+  mainContent.innerHTML = '';
+  
+  // Filter Bar
+  const filterBar = document.createElement('div');
+  filterBar.className = 'filter-bar';
+  
+  const searchInput = document.createElement('input');
+  searchInput.type = 'text';
+  searchInput.className = 'search-input glass-input';
+  searchInput.placeholder = 'Search artists...';
+  searchInput.value = searchQuery;
+  searchInput.addEventListener('input', (e) => {
+    searchQuery = e.target.value;
+    renderLineupContent();
+  });
+  
+  const stages = [...new Set(lineup.map(b => b.stage))].sort();
+  const stageSelect = document.createElement('select');
+  stageSelect.className = 'stage-select glass-input';
+  stageSelect.innerHTML = `<option value="">All Stages</option>` + 
+    stages.map(s => `<option value="${s}" ${s === stageFilter ? 'selected' : ''}>${s}</option>`).join('');
+  stageSelect.addEventListener('change', (e) => {
+    stageFilter = e.target.value;
+    renderLineupContent();
+  });
+  
+  filterBar.appendChild(searchInput);
+  filterBar.appendChild(stageSelect);
+  mainContent.appendChild(filterBar);
+  
+  const contentDiv = document.createElement('div');
+  contentDiv.id = 'lineup-content';
+  mainContent.appendChild(contentDiv);
+  
+  renderLineupContent();
+}
+
+function renderLineupContent() {
+  const container = document.getElementById('lineup-content');
+  if (!container) return;
+  container.innerHTML = '';
+  
   const grouped = groupLineupByDay();
+  
+  if (Object.keys(grouped).length === 0) {
+    container.innerHTML = '<div class="empty-state"><h3>No acts found</h3></div>';
+    return;
+  }
   
   Object.entries(grouped).forEach(([day, bands]) => {
     const section = document.createElement('div');
@@ -307,7 +371,6 @@ function renderLineup() {
     header.textContent = day;
     section.appendChild(header);
 
-    // Sort by time
     bands.sort(compareFestivalTimes);
 
     bands.forEach(band => {
@@ -316,8 +379,10 @@ function renderLineup() {
       section.appendChild(card);
     });
 
-    mainContent.appendChild(section);
+    container.appendChild(section);
   });
+  
+  setTimeout(updateLiveState, 50);
 }
 
 function renderSchedule() {
@@ -711,14 +776,29 @@ function renderCompare() {
 function createBandCard(band, isSelected, onClick) {
   const card = document.createElement('div');
   card.className = `band-card ${isSelected ? 'selected' : ''}`;
+  card.dataset.bandData = JSON.stringify({ day: band.day, time: band.time });
+  
+  const spotifyUrl = `https://open.spotify.com/search/${encodeURIComponent(band.band)}`;
+  const qobuzUrl = `https://www.qobuz.com/us-en/search?q=${encodeURIComponent(band.band)}`;
   
   card.innerHTML = `
-    <div class="band-info">
-      <h3>${band.band}</h3>
+    <div class="card-content-wrapper">
+      <div class="band-header-row">
+        <h3>${band.band} <span class="live-badge" style="display: none;">LIVE</span></h3>
+        <div class="preview-links">
+          <a href="${spotifyUrl}" target="_blank" title="Listen on Spotify" onclick="event.stopPropagation()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.84.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.84.241 1.2zM20.16 9.6C16.44 7.38 9.54 7.2 5.58 8.4c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.68-1.38 12.24-1.14 16.62 1.5.539.36.719 1.02.419 1.56-.299.42-1.02.599-1.8.24z"/></svg>
+          </a>
+          <a href="${qobuzUrl}" target="_blank" title="Listen on Qobuz" onclick="event.stopPropagation()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+          </a>
+        </div>
+      </div>
       <div class="band-meta">
         <span>${band.time}</span>
         <span class="stage-badge">${band.stage}</span>
       </div>
+      ${band.description ? `<div class="band-description">${band.description}</div>` : ''}
     </div>
     ${onClick ? `<div class="select-toggle"></div>` : ''}
   `;
@@ -783,6 +863,73 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.add('hidden');
   }, 3000);
+}
+
+// Live Now logic
+let jumpLiveBtn = null;
+
+function updateLiveState() {
+  const now = new Date();
+  
+  let hasLiveActs = false;
+  let firstLiveElement = null;
+
+  document.querySelectorAll('.band-card').forEach(card => {
+    const bandDataStr = card.dataset.bandData;
+    if (!bandDataStr) return;
+    try {
+      const band = JSON.parse(bandDataStr);
+      const isLive = isBandLive(band, now);
+      
+      const badge = card.querySelector('.live-badge');
+      if (isLive) {
+        card.classList.add('live-now');
+        if (badge) badge.style.display = 'inline-block';
+        hasLiveActs = true;
+        if (!firstLiveElement) firstLiveElement = card;
+      } else {
+        card.classList.remove('live-now');
+        if (badge) badge.style.display = 'none';
+      }
+    } catch(e) {}
+  });
+  
+  if (jumpLiveBtn) {
+    if (hasLiveActs) {
+      jumpLiveBtn.classList.remove('hidden');
+      jumpLiveBtn.onclick = () => {
+        if (firstLiveElement) {
+          firstLiveElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      };
+    } else {
+      jumpLiveBtn.classList.add('hidden');
+    }
+  }
+}
+
+function isBandLive(band, now) {
+  const year = 2026;
+  const monthMap = { "June": 5, "May": 4, "July": 6 }; // 0-indexed months
+  
+  const match = band.day.match(/,\s*([A-Za-z]+)\s+(\d+)/);
+  if (!match) return false;
+  
+  const monthStr = match[1];
+  const dayNum = parseInt(match[2], 10);
+  const month = monthMap[monthStr];
+  
+  let timeStr = band.time;
+  if (timeStr.includes(' - ')) timeStr = timeStr.split(' - ')[0];
+  const [hours, minutes] = timeStr.split(':').map(Number);
+  
+  let actualDayNum = dayNum;
+  if (hours < 9) actualDayNum += 1; // Late night acts are calendar-day next
+  
+  const setStartTime = new Date(year, month, actualDayNum, hours, minutes, 0);
+  const setEndTime = new Date(setStartTime.getTime() + 60 * 60 * 1000); // Assume 1 hour
+  
+  return now >= setStartTime && now < setEndTime;
 }
 
 // Start
